@@ -10,8 +10,11 @@ class Triangle
    kind=nil
    if (side_a<=0 || side_b<=0 || side_c<=0) ||
      (side_a+side_b<=side_c || side_a+side_c<=side_b || side_b+side_c<=side_a)
-     raise TriangleError
-
+     begin
+       raise TriangleError
+     rescue TriangleError=> error
+       puts error.message
+     end
    elsif (side_a == side_b && side_a == side_c)
      kind = :"equilateral"
      #binding.pry
