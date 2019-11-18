@@ -20,14 +20,12 @@ class Triangle
    elsif (side_a != side_b && side_a != side_c && side_b != side_c)
      kind = :"scalene"
    else
-
    end
-
+ end
+ class TriangleError < StandardError
+   def message
+     "The sum of the lengths of any two sides of a triangle always exceeds the length of the third side"
+   end
  end
 
-end
-class TriangleError < StandardError
-  def message
-    "The sum of the lengths of any two sides of a triangle always exceeds the length of the third side"
-  end
 end
